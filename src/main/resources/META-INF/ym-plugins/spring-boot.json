@@ -1,0 +1,5 @@
+{
+  "id": "spring-boot",
+  "main": "ym.plugin.springboot.SpringBootPlugin",
+  "dependencyManagement": "org.springframework.boot:spring-boot-dependencies:4.0.3"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "yummy-plugin-spring-boot",
+  "version": "4.0.3-5",
+  "target": "25",
+  "groupId": "sh.yummy",
+  "dependencies": {
+    "sh.yummy:yummy-plugin-api": "1.0.1",
+    "org.springframework.boot:spring-boot-loader": "4.0.3"
+  },
+  "registries": {
+    "github": {
+      "url": "https://maven.pkg.github.com/ympkg/yummy-plugin-spring-boot",
+      "scope": "sh.yummy.*"
+    }
+  }
+}
