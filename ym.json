@@ -8,9 +8,10 @@
     "org.springframework.boot:spring-boot-loader": "4.0.3"
   },
   "registries": {
-    "github": {
-      "url": "https://maven.pkg.github.com/ympkg/yummy-plugin-spring-boot",
-      "scope": "sh.yummy.*"
+    "release": {
+      "url": "${OMNI_MAVEN_URL}/releases",
+      "username": "${OMNI_MAVEN_USERNAME}",
+      "password": "${OMNI_MAVEN_PASSWORD}"
     }
   }
 }
