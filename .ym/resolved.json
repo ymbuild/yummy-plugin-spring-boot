@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "config_hash": "01a9e83d9e7c30608377729bfb01321f7ea76ad7d61dd79c2f5b210e276a842e",
+  "dependencies": {
+    "org.springframework.boot:spring-boot-loader:4.0.3": {
+      "scope": "compile"
+    },
+    "sh.yummy:yummy-plugin-api:1.0.1": {
+      "scope": "compile"
+    }
+  }
+}

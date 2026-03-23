@@ -345,12 +345,23 @@ public class SpringBootJarTask {
      * Loader is declared as a dependency of this plugin, resolved by ym.
      */
     private Path findLoaderJar(java.util.List<Path> classpath, String version) {
+        // 1. Search app runtime classpath
         for (var jar : classpath) {
             var name = jar.getFileName().toString();
             if (name.startsWith("spring-boot-loader-") && !name.contains("tools") && name.endsWith(".jar")) {
                 return jar;
             }
         }
+        // 2. Search JVM classpath (plugin's own dependencies, resolved by ym)
+        var jvmCp = System.getProperty("java.class.path", "");
+        for (var entry : jvmCp.split(java.io.File.pathSeparator)) {
+            var path = Path.of(entry);
+            var name = path.getFileName().toString();
+            if (name.startsWith("spring-boot-loader-") && !name.contains("tools") && name.endsWith(".jar")) {
+                return path;
+            }
+        }
+        // 3. Check Maven cache
         var home = System.getProperty("user.home", ".");
         var cached = Path.of(home, YM_DIR, MAVEN_CACHE_DIR,
                 "org.springframework.boot", "spring-boot-loader", version,
